@@ -195,6 +195,20 @@ HOST_GCC_COMMON_CONF_OPTS += --with-float=soft
 endif
 endif
 
+ifeq ($(BR2_MIPS_LLSC),y)
+# only mips*-*-*
+ifeq ($(BR2_mips)$(BR2_mipsel)$(BR2_mips64)$(BR2_mips64el),y)
+HOST_GCC_COMMON_CONF_OPT += --with-llsc=yes
+endif
+endif
+
+ifeq ($(BR2_MIPS_NOLLSC),y)
+# only mips*-*-*
+ifeq ($(BR2_mips)$(BR2_mipsel)$(BR2_mips64)$(BR2_mips64el),y)
+HOST_GCC_COMMON_CONF_OPT += --with-llsc=no
+endif
+endif
+
 ifeq ($(BR2_GCC_SUPPORTS_FINEGRAINEDMTUNE),y)
 HOST_GCC_COMMON_CONF_OPTS += --disable-decimal-float
 endif
