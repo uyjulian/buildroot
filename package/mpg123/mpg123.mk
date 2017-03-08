@@ -13,7 +13,7 @@ MPG123_LICENSE = LGPLv2.1
 MPG123_LICENSE_FILES = COPYING
 MPG123_DEPENDENCIES = host-pkgconf
 
-MPG123_CPU = $(if $(BR2_SOFT_FLOAT),generic_nofpu,generic_fpu)
+MPG123_CPU = generic_nofpu
 
 ifeq ($(BR2_aarch64),y)
 MPG123_CPU = aarch64
