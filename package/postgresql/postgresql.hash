@@ -1,2 +1,4 @@
-# From https://ftp.postgresql.org/pub/source/v9.6.1/postgresql-9.6.1.tar.bz2.sha256
-sha256 e5101e0a49141fc12a7018c6dad594694d3a3325f5ab71e93e0e51bd94e51fcd  postgresql-9.6.1.tar.bz2
+# From https://ftp.postgresql.org/pub/source/v9.6.8/postgresql-9.6.8.tar.bz2.sha256
+sha256 eafdb3b912e9ec34bdd28b651d00226a6253ba65036cb9a41cad2d9e82e3eb70  postgresql-9.6.8.tar.bz2
+# License file, Locally calculated
+sha256 24cfc70cf16b3a23242c49ffce39510683bdd48cbedb8a46fe03976ee5f5c21e  COPYRIGHT

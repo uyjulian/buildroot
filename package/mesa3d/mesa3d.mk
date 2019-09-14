@@ -22,6 +22,12 @@ MESA3D_DEPENDENCIES = \
 	expat \
 	libdrm
 
+# Disable static, otherwise configure will fail with: "Cannot enable both static
+# and shared."
+ifeq ($(BR2_SHARED_STATIC_LIBS),y)
+MESA3D_CONF_OPTS += --disable-static
+endif
+
 # The Sourcery MIPS toolchain has a special (non-upstream) feature to
 # have "compact exception handling", which unfortunately breaks with
 # mesa3d, so we disable it here by passing -mno-compact-eh.
@@ -175,6 +181,13 @@ MESA3D_PROVIDES += libgles
 MESA3D_CONF_OPTS += --enable-gles1 --enable-gles2
 else
 MESA3D_CONF_OPTS += --disable-gles1 --disable-gles2
+endif
+
+ifeq ($(BR2_PACKAGE_LM_SENSORS),y)
+MESA3D_CONF_OPTS += --enable-lmsensors
+MESA3D_DEPENDENCIES += lm-sensors
+else
+MESA3D_CONF_OPTS += --disable-lmsensors
 endif
 
 # Avoid automatic search of llvm-config

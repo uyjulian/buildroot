@@ -4,8 +4,20 @@
 #
 ################################################################################
 
-XEN_VERSION = 4.7.1
-XEN_SITE = http://bits.xensource.com/oss-xen/release/$(XEN_VERSION)
+XEN_VERSION = 4.7.3
+XEN_SITE = https://downloads.xenproject.org/release/xen/$(XEN_VERSION)
+XEN_PATCH = \
+	https://xenbits.xenproject.org/xsa/xsa226-4.7.patch \
+	https://xenbits.xenproject.org/xsa/xsa227.patch \
+	https://xenbits.xenproject.org/xsa/xsa228-4.8.patch \
+	https://xenbits.xenproject.org/xsa/xsa230.patch \
+	https://xenbits.xenproject.org/xsa/xsa231-4.7.patch \
+	https://xenbits.xenproject.org/xsa/xsa232.patch \
+	https://xenbits.xenproject.org/xsa/xsa233.patch \
+	https://xenbits.xenproject.org/xsa/xsa234-4.8.patch \
+	https://xenbits.xenproject.org/xsa/xsa235-4.7.patch \
+	https://xenbits.xenproject.org/xsa/xsa245/0001-xen-page_alloc-Cover-memory-unreserved-after-boot-in.patch \
+	https://xenbits.xenproject.org/xsa/xsa245/0002-xen-arm-Correctly-report-the-memory-region-in-the-du.patch
 XEN_LICENSE = GPLv2
 XEN_LICENSE_FILES = COPYING
 XEN_DEPENDENCIES = host-python
@@ -42,6 +54,7 @@ XEN_DEPENDENCIES += argp-standalone
 endif
 XEN_INSTALL_TARGET_OPTS += DESTDIR=$(TARGET_DIR) install-tools
 XEN_MAKE_OPTS += dist-tools
+XEN_CONF_OPTS += --with-extra-qemuu-configure-args="--disable-sdl"
 
 define XEN_INSTALL_INIT_SYSV
 	mv $(TARGET_DIR)/etc/init.d/xencommons $(TARGET_DIR)/etc/init.d/S50xencommons
