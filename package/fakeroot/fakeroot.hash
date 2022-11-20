@@ -1,4 +1,2 @@
 # From http://snapshot.debian.org/package/fakeroot/1.20.2-1/
-sha1	367040df07043edb630942b21939e493f3fad888	fakeroot_1.20.2.orig.tar.bz2
-# Calculated based on the hash above
-sha256	7c0a164d19db3efa9e802e0fc7cdfeff70ec6d26cdbdc4338c9c2823c5ea230c	fakeroot_1.20.2.orig.tar.bz2
+sha256	480a578ffdc5592e73df4c086950d321b4adc78dbdaec56c82e4fe1fb68de8e9	fakeroot_1.26.orig.tar.gz
