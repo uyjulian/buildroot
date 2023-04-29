@@ -48,11 +48,15 @@
           "run" : "make -j$(getconf _NPROCESSORS_ONLN)"
         },
         {
+          "name" : "Create SDK tarball",
+          "run" : "tar -czf output/images/mipsel-buildroot-linux-uclibc_sdk-buildroot.tar.gz --owner=0 --group=0 --numeric-owner --transform='s#^./#mipsel-buildroot-linux-uclibc_sdk-buildroot/#' -C output/host/ ."
+        },
+        {
           "name" : "Upload artifact",
           "uses" : "actions/upload-artifact@master",
           "with" : {
             "name" : "rootfs-ps2",
-            "path" : "output/images/rootfs.cpio.gz"
+            "path" : "output/images/rootfs.cpio.gz\noutput/images/mipsel-buildroot-linux-uclibc_sdk-buildroot.tar.gz\n"
           }
         }
       ]
