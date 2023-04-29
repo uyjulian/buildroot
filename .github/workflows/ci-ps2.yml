@@ -25,16 +25,19 @@
       },
       "steps" : [
         {
+          "name" : "Checkout repository",
+          "uses" : "actions/checkout@v2",
+          "with" : {
+            "submodules" : "recursive"
+          }
+        },
+        {
           "name" : "Make output directory",
           "run" : "mkdir -p output"
         },
         {
           "name" : "Touch file",
           "run" : "touch output/.br-external.mk"
-        },
-        {
-          "name" : "list files",
-          "run" : "ls -a"
         },
         {
           "name" : "Copy config",
