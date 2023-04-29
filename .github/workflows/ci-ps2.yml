@@ -30,7 +30,7 @@
         },
         {
           "name" : "Touch file",
-          "run" : "output/.br-external.mk"
+          "run" : "touch output/.br-external.mk"
         },
         {
           "name" : "Copy config",
