@@ -33,8 +33,12 @@
           "run" : "touch output/.br-external.mk"
         },
         {
+          "name" : "list files",
+          "run" : "ls -a"
+        },
+        {
           "name" : "Copy config",
-          "run" : "cp .config-ps2 .config"
+          "run" : "cp ./.config-ps2 ./.config"
         },
         {
           "name" : "Compile project",
