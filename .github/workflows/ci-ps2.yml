@@ -52,11 +52,19 @@
           "run" : "tar -czf output/images/mipsel-buildroot-linux-uclibc_sdk-buildroot.tar.gz --owner=0 --group=0 --numeric-owner --transform='s#^./#mipsel-buildroot-linux-uclibc_sdk-buildroot/#' -C output/host/ ."
         },
         {
-          "name" : "Upload artifact",
+          "name" : "Upload rootfs artifact",
           "uses" : "actions/upload-artifact@master",
           "with" : {
             "name" : "rootfs-ps2",
-            "path" : "output/images/rootfs.cpio.gz\noutput/images/mipsel-buildroot-linux-uclibc_sdk-buildroot.tar.gz\n"
+            "path" : "output/images/rootfs.cpio.gz"
+          }
+        },
+        {
+          "name" : "Upload toolchain artifact",
+          "uses" : "actions/upload-artifact@master",
+          "with" : {
+            "name" : "toolchain-ps2",
+            "path" : "output/images/mipsel-buildroot-linux-uclibc_sdk-buildroot.tar.gz"
           }
         }
       ]
