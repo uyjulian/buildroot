@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2017.02.11-00011-g028225c827 Configuration
+# Buildroot 2017.02.11-00026-g2be5c037d7 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 
@@ -1562,6 +1562,7 @@ BR2_PACKAGE_QEMU_ARCH_SUPPORTS_TARGET=y
 # BR2_PACKAGE_ARGUS is not set
 # BR2_PACKAGE_ARPTABLES is not set
 # BR2_PACKAGE_ATFTP is not set
+# BR2_PACKAGE_AUTOSSH is not set
 # BR2_PACKAGE_AVAHI is not set
 # BR2_PACKAGE_AXEL is not set
 # BR2_PACKAGE_BABELD is not set
